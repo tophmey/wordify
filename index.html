@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="wordify.js"></script>
+	</head>
+	<body>
+		<p>Please create code which converts an integer to an English string naming the number, handling at least all numbers with 5 or fewer digits. So, for example: given 42 as an input, generate "forty-two"; given 101, generate "one hundred and one".</p> 
+		<p>That's the sole spec for the code, so handle it as you would in a production scenario (including asking me for information if needed), and deliver what you'd consider production-ready code.</p>
+		<form validate>
+			<label for="integer">Enter an Integer</label><br>
+			<input id="integer" type="number" min="0" required>
+			<button id="convert">Convert</button>
+			<p id="result">some stuff</p>
+		</form>
+		<script>
+			document.querySelector("#convert").addEventListener('click', function(e){
+				e.preventDefault();
+				var integer = Number(document.querySelector("#integer").value);
+				document.querySelector("#result").textContent = integer + ": " + wordify(integer);
+			});
+		</script>
+	</body>
+</html>
+
